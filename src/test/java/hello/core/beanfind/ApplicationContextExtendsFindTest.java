@@ -30,13 +30,6 @@ public class ApplicationContextExtendsFindTest {
     }
 
     @Test
-    @DisplayName("특정 하위 타입으로 조회.")
-    void findBeanBySubType() {
-        RateDiscountPolicy bean = ac.getBean(RateDiscountPolicy.class);
-        org.assertj.core.api.Assertions.assertThat(bean).isInstanceOf(RateDiscountPolicy.class);
-    }
-
-    @Test
     @DisplayName("부모 타입으로 모두 조회하기.")
     void findAllBeanByPArentType() {
         Map<String, DiscountPolicy> beansOfType = ac.getBeansOfType(DiscountPolicy.class);
